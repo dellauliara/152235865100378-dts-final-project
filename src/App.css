@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
-}
+.Appbar{
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
+.gambar {
+  width: 60px;
+  margin-top: 8px;
+  margin-left: 40vh
+ }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.slider {
+  position: relative;
+  height: 60vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.image {
+  width: 800px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+ 
+}
+.gambarCard{
+  object-fit: cover;
+  width: 300px;
+
+}
+.right-arrow{
+  position: absolute;
+  top: 50%;
+  right: 45vh;
+  font-size: 3 rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left-arrow{
+  position: absolute;
+  top: 50%;
+  left: 45vh;
+  font-size: 3 rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+ 
+}
+
+.slide{
+  opacity : 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+
+}
+
+.img__description {
+  position: absolute;
+  top: 0;
+  bottom: 1;
+  left: 0;
+  right: 0;
+  background: rgba(21, 22, 22, 0.72);
+  color: rgb(223, 223, 223);
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+  height: 40px;
+ 
+
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+.slide.active:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.judul{
+ margin-left: 45vh;
+ margin-top: 3vh;
 }
