@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from'react';
 
 import api from '../apis/api';
+import menu from'../apis/menu.json'; 
 import ImageSlider from './ImageSlider';
 
 
@@ -27,7 +28,7 @@ getPopular();
     return(
         <div>
             <h3 className='judul'>Popular Picts</h3>
-           <ImageSlider slides={popular}/>
+           <ImageSlider menu={popular}/>
                      
             </div>
     )

@@ -3,8 +3,10 @@ import './App.css';
 import theme from "./themes/theme";
 import Navbar from './components/Navbar';
 import Home from './containers/Home';
-import ImageSlider from './components/ImageSlider';
-import { SliderData } from './components/SliderData';
+import Login  from './containers/Login';
+import Register  from './containers/Register';
+import { Route, Routes} from "react-router-dom";
+import Cuisine from './containers/Cuisine';
 
 
 function App() {
@@ -12,7 +14,15 @@ function App() {
     <ThemeProvider theme={theme}>
   <div className="App">
     <Navbar/>
-      <Home/>
+
+    <Routes>
+    <Route path ="/" element={<Home/>}></Route>
+    <Route path ="login" element={<Login/>}></Route>
+    <Route path ="register" element={<Register/>}></Route>
+    <Route path ="cuisine/:type" element={<Cuisine/>}></Route>
+
+    </Routes>
+    
 
     </div>
 

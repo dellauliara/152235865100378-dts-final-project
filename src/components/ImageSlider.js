@@ -5,23 +5,23 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { Typography } from "@mui/material";
 
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ menu }) => {
   const [current, setCurrent] = useState(0);
-  const length = slides.length;
+  const length = menu.length;
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-  if (!Array.isArray(slides) || slides.length <= 0) {
+  if (!Array.isArray(menu) || menu.length <= 0) {
     return null;
   }
   return (
     <section className="slider">
       <ArrowLeftIcon className="left-arrow" onClick={prevSlide} />
       <ArrowRightIcon className="right-arrow" onClick={nextSlide} />
-      {slides.map((slide, index) => {
+      {menu.map((slide, index) => {
         return(
             <div className={index === current ? 'slide active' : 'slide'} key={index}>
 

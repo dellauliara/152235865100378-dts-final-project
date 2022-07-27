@@ -1,36 +1,55 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { CardMedia } from "@mui/material";
-import { Box } from "@mui/system";
-import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
-const ImageCard = ({ veggie }) => {
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import styled from "styled-components";
+import { Box } from "@mui/material";
+const ImageCard = ({ veggies }) => {
   return (
+    <div>
 
-    
-    <Card id={veggie.id} sx={{flexDirection: "column", display: "flex", margin: 5, maxWidth: 300 }}>
-      <CardMedia height="140">
-        <img src={veggie.image} alt={veggie.title} className="gambarCard" />
-      </CardMedia>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {veggie.title}
-          </Typography>
-          <Box></Box>
-          <Typography sx={{flex:1}} variant="body2" color="text.secondary">
-           {veggie.summary}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Box>
-    </Card>
+     
+          <Wrapper>
+           
+            <Splide options={{
+              perPage: 3,
+              arrows: true,
+              pagination: false,
+              drag: "free",
+              gap: "5rem"
+            }}>
+              {veggies.map((veggie) => {
+              return (
+                <SplideSlide>
+                  <Box className="kartu">
+                  <p className="p">{veggie.title}</p>
+                  <img
+                    src={veggie.image}
+                    alt={veggie.title}
+                    className="gambarCard"
+                  />
+                  <Gradient/>
+                </Box>
+                </SplideSlide>
+                
+              );
+            })}</Splide>            
+          </Wrapper>
+        
+
+    </div>
   );
 };
+
+const Wrapper = styled.div`
+  margin: 4rem 0 rem;
+`;
+
+const Gradient = styled.div`
+z-index:3;
+position: absolute;
+width: 100%;
+height: 100%;
+background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+border-radius:2rem;`;
 
 export default ImageCard;
