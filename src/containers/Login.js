@@ -9,8 +9,10 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../config/firebase';
+import { auth, signInWithGoogle } from '../config/firebase';
 import { Alert } from '@mui/material';
+import logo from "../img/google.png";
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -29,6 +31,8 @@ const Login = () => {
           setErrorMessage(error.message);
       }
   };
+
+ 
 
     return (
         <Container component="main" maxWidth="xs">
@@ -79,18 +83,26 @@ const Login = () => {
                     >
                         Sign In
                     </Button>
+                    <Button
+                        onClick={signInWithGoogle}
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        <img src={logo} alt="logo" className='logoG'/>
+                        Sign In with Google
+                    </Button>
+
                     <Grid container sx={{mb:48}}>
                         <Grid item>
-                            <Typography color='secondary' ><Link to="/register" >
-                                {"Don't have an account? Sign Up"}
+                            <Typography color='secondary' >
+                            Don't have an account? 
+                                <Link to="/register" className='link'>
+                                {" Sign Up"}
                             </Link></Typography>
                             
                         </Grid>
-                        <Grid item sx={{marginLeft:15}}>
-                            <Link to="/">
-                                {"Back"}
-                            </Link>
-                        </Grid>
+                        
                     </Grid>
                 </Box>
             </Box>

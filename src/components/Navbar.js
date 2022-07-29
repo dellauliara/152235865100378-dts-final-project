@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../img/spoon.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import Search from "./Search"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const Navbar = () => {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1 }}
-          ></Typography>
+          ></Typography> <Search/>
           {user ? (
             <div>
               <IconButton
@@ -66,6 +67,7 @@ const Navbar = () => {
                 color="inherit"
               >
                 <AccountCircle sx={{ color: "black" }} />
+               
               </IconButton>
               <Menu
                 id="menu-appbar"

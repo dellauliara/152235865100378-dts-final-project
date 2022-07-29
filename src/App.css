@@ -131,3 +131,25 @@ position: relative;
   justify-content: center;
   align-items: center;
 }
+
+.detail{
+  margin-right:40rem
+}
+
+.note{
+  border-style: solid;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 50%;
+  border-width: 2px;
+}
+.logoG{
+  width:8%;
+  margin-right: 22px;
+}
+.link{
+  text-decoration: none;
+}
+.link:hover{
+  color: #ee67aa;
+}

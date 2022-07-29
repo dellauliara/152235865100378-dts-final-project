@@ -1,5 +1,6 @@
-import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
-import { GiNoodles, GiChopsticks } from "react-icons/gi";
+import { FaIceCream } from "react-icons/fa";
+import { TbSoup } from "react-icons/tb";
+import { GiFruitBowl, GiSaucepan } from "react-icons/gi";
 
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -8,24 +9,24 @@ import styled from "styled-components";
 function Category() {
   return (
     <div className="List" >
-      <Slink to={'/cuisine/Italian'}>
-        <FaPizzaSlice />
-        <h5>Italian</h5>
+      <Slink to={'/type/dessert'}>
+        <FaIceCream />
+        <h5>Dessert</h5>
       </Slink>
 
-      <Slink to={'/cuisine/American'}>
-        <FaHamburger />
-        <h5>American</h5>
+      <Slink to={'/type/appetizer'}>
+        <TbSoup />
+        <h5>Appetizer</h5>
       </Slink>
 
-      <Slink to={'/cuisine/Thai'}>
-        <GiNoodles />
-        <h5>Thai</h5>
+      <Slink to={'/type/salad'}>
+        <GiFruitBowl />
+        <h5>Salad</h5>
       </Slink>
 
-      <Slink to={'/cuisine/Japanese'}>
-        <GiChopsticks />
-        <h5>Japanese</h5>
+      <Slink to={'/type/sauce'}>
+        <GiSaucepan />
+        <h5>Sauce</h5>
       </Slink>
     </div>
   );
@@ -47,7 +48,15 @@ transform: scale(0.8);
 color: #FFFFFF;
 font-size: 1.5rem;
 
-
+&.active{
+  background: #f29ab4;
+  svg{
+    color: #FFFFFF
+  }
+  h4{
+    color: #FFFFFF
+  }
+}
 
 `;
 
