@@ -10,6 +10,7 @@ import Type from "./containers/Type";
 import Searched from "./containers/Searched";
 import Detail from "./containers/Detail";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
             }
           ></Route>
         </Routes>
+        <Footer/>
       </div>
     </ThemeProvider>
   );

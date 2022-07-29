@@ -153,3 +153,17 @@ position: relative;
 .link:hover{
   color: #ee67aa;
 }
+.footer{
+  margin-top: 3rem;
+  
+  text-align: center;
+  background-color: #313131;
+  color: white;
+  height: 4rem;;
+}
+.foot{
+  color: white;
+  justify-content: center;
+  padding-top: 1.5rem;
+  font-size: 0.8rem;
+}

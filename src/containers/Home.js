@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
   const getPopular = async() =>{
   try{
-      const fetchedRecipes = await api.get("random");
+      const fetchedRecipes = await api.get("random?number=9");
       setPopular(fetchedRecipes.data.recipes);
       console.log(fetchedRecipes.data.recipes);
   
@@ -32,7 +32,7 @@ function Home() {
   useEffect(() => {
     const getVeggie = async () => {
       try {
-        const fetchedRecipes = await api.get("random?tags=vegetarian");
+        const fetchedRecipes = await api.get("random?tags=vegetarian&number=9");
         setVeggies(fetchedRecipes.data.recipes);
         console.log(fetchedRecipes.data.recipes);
       } catch (error) {
