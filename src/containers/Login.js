@@ -91,7 +91,7 @@ const Login = () => {
                         sx={{ mt: 3, mb: 2 }}
                         className="btn"
                     >
-                        <img src={logo} alt="logo" className='logoG'/>
+                        <img src={logo} alt="" className='logoG'/>
                         Sign In with Google
                     </Button>
 
