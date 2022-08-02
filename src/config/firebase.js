@@ -8,8 +8,8 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
 //  apiKey: "AIzaSyArg2aWaCL8UClPaD2tXyeh1JJUrI9ZpoE",
-  //apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  apiKey: "AIzaSyCjgUhvZSawQ-2ldLuOqNS4ZEc43zpNoD4",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  //apiKey: "AIzaSyCjgUhvZSawQ-2ldLuOqNS4ZEc43zpNoD4",
   authDomain: "my-foodies-6512e.firebaseapp.com",
   projectId: "my-foodies-6512e",
   storageBucket: "my-foodies-6512e.appspot.com",
