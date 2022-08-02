@@ -1,33 +1,37 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
+import React, { useState } from "react";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 import { Button } from "@mui/material";
 import { auth } from "../config/firebase";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../img/spoon.png";
+import logo from "../img/spoon1.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-import Search from "./Search"
-
+import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
 const Navbar = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleMenu = (event) => {
+ const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
+  }
   const onLogout = () => {
     signOut(auth)
       .then(() => {
@@ -40,22 +44,33 @@ const Navbar = () => {
   const onLogin = () => {
     navigate("/login");
   };
-  const onRegister = () => {
-    navigate("/register");
-  };
+  const [input, setInput] = useState("");
 
+    const submitHandler = (e) => {
+        e.preventDefault();
+        navigate('searched/'+input);
+    };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "white" }}>
+   
+      <AppBar position="static">
         <Toolbar>
-          <Link style={{ color: "inherit", textDecoration: "inherit" }} to="/">
-            <img src={logo} alt="" className="gambar" />
+        <Link style={{ color: "inherit", textDecoration: "inherit" }} to="/">
+            <img src={logo} alt="" className="gambarLogo" />
           </Link>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          ></Typography> <Search/>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            dellauliara
+          </Typography>
+          <FormStyle onSubmit={submitHandler}>
+      <div>
+        <FaSearch></FaSearch>
+        <input
+          onChange={(e) => setInput(e.target.value)}
+          type="text"
+          value={input}
+        />
+      </div>
+    </FormStyle>
           {user ? (
             <div>
               <IconButton
@@ -66,20 +81,20 @@ const Navbar = () => {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle sx={{ color: "black" }} />
+                <AccountCircle sx={{ color: "wgite" }} />
                
               </IconButton>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
@@ -91,7 +106,7 @@ const Navbar = () => {
           ) : (
             <div>
              
-              <Button onClick={onLogin} >
+              <Button sx={{color: "white"}} onClick={onLogin}>
                 Login
               </Button>
             </div>
@@ -100,6 +115,35 @@ const Navbar = () => {
       </AppBar>
     </Box>
   );
-};
+}
+
+const FormStyle = styled.form`
+
+  div {
+    position: relative;
+    width: 100%;
+  }
+
+  input {
+    border: none;
+    background: #494949;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    width: 100%;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(100%, -50%);
+    color: #ffffff;
+  }
+`;
+
 
 export default Navbar;

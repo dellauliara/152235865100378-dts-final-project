@@ -80,6 +80,7 @@ const Login = () => {
                         fullWidth
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
+                        className="btn"
                     >
                         Sign In
                     </Button>
@@ -88,6 +89,7 @@ const Login = () => {
                         fullWidth
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
+                        className="btn"
                     >
                         <img src={logo} alt="logo" className='logoG'/>
                         Sign In with Google

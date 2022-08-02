@@ -31,7 +31,7 @@ function Type() {
         {cuisine.map((item) => {
           return (
             
-          <Link to={"/detail/" + item.id} >
+          <Link to={"/detail/" + item.id} className="link">
             <Card key={item.id}>
               <img src={item.image} alt={item.title} />
               <h4>{item.title}</h4>
@@ -61,8 +61,9 @@ const Card = styled.div`
   h4{
     text-align: center;
     padding: 1rem;
-    text-decoration: none;
+    
   }
+ 
 `;
 
 export default Type;

@@ -27,8 +27,8 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            </Route>
-            <Route
+          </Route>
+          <Route
             path="login"
             element={
               <ProtectedRoute loginOnly={false}>
@@ -45,14 +45,8 @@ function App() {
             }
           />
           <Route path="type/:type" element={<Type />}></Route>
-          <Route
-            path="searched/:search"
-            element={
-              <ProtectedRoute loginOnly={false}>
-                <Searched />
-              </ProtectedRoute>
-            }
-          ></Route>
+
+          <Route path="searched/:search" element={<Searched />}></Route>
           <Route
             path="/detail/:name"
             element={
@@ -62,7 +56,7 @@ function App() {
             }
           ></Route>
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </ThemeProvider>
   );

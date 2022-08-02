@@ -14,10 +14,10 @@ const ImageCard = ({ veggies }) => {
         <Splide
           options={{
             perPage: 3,
-            arrows: true,
-            pagination: false,
+            arrows: false,
+            pagination: true,
             drag: "free",
-            gap: "5rem",
+            gap: "3rem",
           }}
         >
           {veggies.map((veggie) => {

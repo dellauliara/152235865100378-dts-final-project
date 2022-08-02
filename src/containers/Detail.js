@@ -59,7 +59,7 @@ const Detail = () => {
         {activeTab === 'instructions' && 
         (
             <div>           
-            <h3 dangerouslySetInnerHTML={{__html: details.instructions}} ></h3>
+            <h9 dangerouslySetInnerHTML={{__html: details.instructions}} ></h9>
         </div>
         ) }
          {activeTab === 'ingredients' && (<ul>
@@ -74,8 +74,8 @@ const Detail = () => {
 };
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 15rem;
   display: flex;
   .active {
     background: linear-gradient(35deg, #494949, #313131);
@@ -99,13 +99,17 @@ const DetailWrapper = styled.div`
     text-align: justify;
     color: #000000
   }
+  h9{
+    padding-top: 1.5rem;
+
+  }
   
   ul {
     margin-top: 2rem;
   }
 `;
 const Button = styled.button`
-padding: 1rem 2rem;
+padding: 1rem 1rem;
 color #313131;
 background: #FFFFFF;
 border: 2px solid black;

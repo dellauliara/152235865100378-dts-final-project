@@ -2,9 +2,9 @@
 
 
 }
-.gambar {
+.gambarLogo {
   width: 60px;
-  margin-top: 8px;
+  margin: 7px;
 
  }
 
@@ -89,6 +89,7 @@
 .judul{
 
  margin-top: 3vh;
+ margin-bottom: 3vh;
 }
 
 .List{
@@ -133,7 +134,8 @@ position: relative;
 }
 
 .detail{
-  margin-right:40rem
+  margin-right:0rem;
+  width: 50%;
 }
 
 .note{
