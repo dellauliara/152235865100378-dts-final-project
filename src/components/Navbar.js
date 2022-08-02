@@ -15,6 +15,7 @@ import { Button } from "@mui/material";
 import { auth } from "../config/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../img/spoon1.png";
+import logo2 from "../img/yummy.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import styled from "styled-components";
@@ -59,7 +60,7 @@ const Navbar = () => {
             <img src={logo} alt="" className="gambarLogo" />
           </Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            dellauliara
+          <img src={logo2} alt="" className="gambarLogo2" />
           </Typography>
           <FormStyle onSubmit={submitHandler}>
       <div>
