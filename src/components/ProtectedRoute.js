@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 
 const ProtectedRoute = ({children, loginOnly = true}) => {
-    const [user] = useAuthState(auth);
+    const [user,  isLoading] = useAuthState(auth);
 
 
     if(!user && loginOnly){
@@ -15,7 +15,7 @@ const ProtectedRoute = ({children, loginOnly = true}) => {
     }
 
 
-   return  children;
+    return isLoading ? <div>loading...</div> : children;
 }
 
 export default ProtectedRoute

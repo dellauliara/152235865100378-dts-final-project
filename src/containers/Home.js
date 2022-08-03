@@ -32,7 +32,7 @@ function Home() {
   useEffect(() => {
     const getVeggie = async () => {
       try {
-        const fetchedRecipes = await api.get("random?tags=vegetarian&number=9");
+        const fetchedRecipes = await api.get("random?intolerances=dairy&number=9");
         setVeggies(fetchedRecipes.data.recipes);
         console.log(fetchedRecipes.data.recipes);
       } catch (error) {
@@ -45,9 +45,9 @@ function Home() {
   return (
     <div>
       <Category />
-      <h3 className='judul'>Popular Picts</h3>
+      <h3 className='judul'>Yummie Food</h3>
        <ImageSlider menu={popular} className="image"/>
-       <h3 className="judul">Veggie Picts</h3>
+       <h3 className="judul">Dairy Free Yummie</h3>
        <ImageCard veggies={veggies}></ImageCard>
     
     </div>
